@@ -9,26 +9,30 @@ Index
 ---
 <!-- TOC -->
 
-- [超参数选择](#超参数选择)
-    - [Grid Search](#grid-search)
+- [专题-机器学习实践](#专题-机器学习实践)
+  - [Reference](#reference)
+  - [Index](#index)
+  - [超参数选择](#超参数选择)
+    - [Grid Search（网格搜索）](#grid-search网格搜索)
     - [Random Search](#random-search)
     - [相关库（未使用）](#相关库未使用)
-- [几种参数估计的区别于联系: MLE、MAP、贝叶斯 TODO](#几种参数估计的区别于联系-mlemap贝叶斯-todo)
-- [余弦相似度（Cos距离）与欧氏距离的区别和联系](#余弦相似度cos距离与欧氏距离的区别和联系)
-- [监督学习和无监督学习](#监督学习和无监督学习)
-- [熵，求投掷均匀正六面体骰子的熵](#熵求投掷均匀正六面体骰子的熵)
-- [混淆矩阵、模型度量指标：准确率、精确率、召回率、F1 值等](#混淆矩阵模型度量指标准确率精确率召回率f1-值等)
-- [如何处理数据中的缺失值](#如何处理数据中的缺失值)
-- [介绍一个完整的机器学习项目流程](#介绍一个完整的机器学习项目流程)
-- [数据清洗与特征处理](#数据清洗与特征处理)
-- [关联规则挖掘的 3 个度量指标：支持度、置信度、提升度](#关联规则挖掘的-3-个度量指标支持度置信度提升度)
+  - [几种参数估计的区别与联系: MLE、MAP、贝叶斯 TODO](#几种参数估计的区别与联系-mlemap贝叶斯-todo)
+  - [余弦相似度（Cos距离）与欧氏距离的区别和联系](#余弦相似度cos距离与欧氏距离的区别和联系)
+  - [监督学习和无监督学习](#监督学习和无监督学习)
+  - [熵，求投掷均匀正六面体骰子的熵](#熵求投掷均匀正六面体骰子的熵)
+  - [混淆矩阵、模型度量指标：准确率、精确率、召回率、F1 值等](#混淆矩阵模型度量指标准确率精确率召回率f1-值等)
+  - [如何处理数据中的缺失值](#如何处理数据中的缺失值)
+  - [介绍一个完整的机器学习项目流程](#介绍一个完整的机器学习项目流程)
+  - [数据清洗与特征处理](#数据清洗与特征处理)
+  - [关联规则挖掘的 3 个度量指标：支持度、置信度、提升度](#关联规则挖掘的-3-个度量指标支持度置信度提升度)
+  - [规则的有效性：](#规则的有效性)
+  - [**判断规则的有效性**](#判断规则的有效性)
 
 <!-- /TOC -->
 
 ## 超参数选择
 
-###  Grid Search
-- 网格搜索
+###  Grid Search（网格搜索）
 - 在高维空间中对一定区域进行遍历
 
 ### Random Search
@@ -44,11 +48,11 @@ Index
 
 
 
-## 几种参数估计的区别于联系: MLE、MAP、贝叶斯 TODO
+## 几种参数估计的区别与联系: MLE、MAP、贝叶斯 TODO
 
 
 ## 余弦相似度（Cos距离）与欧氏距离的区别和联系
-> geekcircle/machine-learning-interview-qa/[4.md](https://github.com/geekcircle/machine-learning-interview-qa/blob/master/questions/4.md)
+> geekcircle/machine-learning-interview-qa/[4.md](https://github.com/geektutu/interview-questions/blob/master/ml/4.md)
 
 - 欧式距离和余弦相似度都能度量 2 个向量之间的相似度
 - 放到向量空间中看，欧式距离衡量两点之间的**直线距离**，而余弦相似度计算的是两个向量之间的**夹角**
@@ -58,11 +62,11 @@ Index
 > [欧氏距离和余弦相似度的区别是什么？](https://www.zhihu.com/question/19640394) - 知乎 
 
 ## 监督学习和无监督学习
-> geekcircle/machine-learning-interview-qa/[6.md](https://github.com/geekcircle/machine-learning-interview-qa/blob/master/questions/6.md)
+> geekcircle/machine-learning-interview-qa/[6.md](https://github.com/geektutu/interview-questions/blob/master/ml/6.md)
 
 
 ## 熵，求投掷均匀正六面体骰子的熵
-> geekcircle/machine-learning-interview-qa/[7.md](https://github.com/geekcircle/machine-learning-interview-qa/blob/master/questions/7.md)
+> geekcircle/machine-learning-interview-qa/[7.md](https://github.com/geektutu/interview-questions/blob/master/ml/7.md)
 
 什么是熵？
 > 深度学习/理论知识/[信息熵、KL 散度（相对熵）与交叉熵**](../A-深度学习/《深度学习》整理#信息熵kl-散度相对熵与交叉熵)
@@ -94,12 +98,14 @@ Index
     <div align="center"><img src="../_assets/TIM截图20180620171915.png" height="" /></div>
 
 **精确率**（precision）
+预测的正样本中真正的正样本的占比
     <div align="center"><img src="../_assets/TIM截图20180620171300.png" height="" /></div>
 
 > 准确率与精确率的区别：
 >> 在正负样本不平衡的情况下，**准确率**这个评价指标有很大的缺陷。比如在互联网广告里面，点击的数量是很少的，一般只有千分之几，如果用acc，即使全部预测成负类（不点击）acc 也有 99% 以上，没有意义。
     
 **召回率**（recall, sensitivity, true positive rate）
+真正的正样本中预测正确的正样本的占比（召回了多少）
     <div align="center"><img src="../_assets/TIM截图20180620190555.png" height="" /></div>
 
 **F1值**——精确率和召回率的调和均值
@@ -109,7 +115,7 @@ Index
 
 
 ## 如何处理数据中的缺失值
-> geekcircle/machine-learning-interview-qa/[1.md](https://github.com/geekcircle/machine-learning-interview-qa/blob/master/questions/1.md)
+> geekcircle/machine-learning-interview-qa/[1.md](https://github.com/geektutu/interview-questions/blob/master/ml/1.md)
 
 可以分为以下 2 种情况：
 
@@ -146,7 +152,7 @@ Index
 
 
 ## 介绍一个完整的机器学习项目流程
-> geekcircle/machine-learning-interview-qa/[2.md](https://github.com/geekcircle/machine-learning-interview-qa/blob/master/questions/2.md)
+> geekcircle/machine-learning-interview-qa/[2.md](https://github.com/geektutu/interview-questions/blob/master/ml/2.md)
 
 1. 数学抽象
 
@@ -232,7 +238,7 @@ Index
 - 满足最小支持度和最小置信度的规则，叫做“强关联规则”
     > 最小支持度和最小置信度是人工设置的阈值
 - `Lift(X→Y) > 1` 的 X→Y 是有效的强关联规则
-- `Lift(X→Y) <=1` 的 X→Y 是有效的强关联规则
+- `Lift(X→Y) <=1` 的 X→Y 是无效的强关联规则
 - 特别地，`Lift(X→Y) = 1` 时，X 与 Y 相互独立。
 
 **判断规则的有效性**
